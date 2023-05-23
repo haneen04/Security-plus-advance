@@ -1,0 +1,111 @@
+{% block content %}
+
+<style>
+
+
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#fafdff;  
+    font-family: 'Arial';  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #1c639d;  
+        border-radius: 15px ;  
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}  
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 20px;  
+}  
+label{  
+    color: #121312;  
+    font-size: 17px;  
+}  
+#username{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#password{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#login-btn input:hover{
+    background-color: #1c639d;
+  color: aliceblue;
+  font-weight:bolder;
+  box-shadow: rgba(75, 75, 121, 0.726) 0px 13px 27px -5px, rgba(0, 0, 0, 0.479) 0px 8px 16px -8px;
+}
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding: 8px;  
+    color: rgb(13, 13, 14); 
+    align-items: center;  
+  
+}
+
+.home-container{
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  }
+
+  #button {
+    font-size: 30px;
+    padding-top: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: rgba(99, 146, 170, 0.805) 0px 13px 27px -5px, rgba(20, 92, 224, 0.863) 0px 8px 16px -8px;
+
+  }
+  #button:hover{
+    background-color: #1c639d;
+  color: aliceblue;
+  font-weight:bolder;
+  box-shadow: rgba(75, 75, 121, 0.726) 0px 13px 27px -5px, rgba(0, 0, 0, 0.479) 0px 8px 16px -8px;
+  }
+
+</style>
+
+<h2>DASHBOARD</h2><br>
+
+
+
+<div class="login">
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        
+        <label>UserID:</label>
+        <br><br>
+        <input type="text" name="username" id='username' placeholder="Enter ID"/>
+        <br><br>
+        <label>Password:</label>
+        <br><br>
+        <input type="password" name="password" id='password' placeholder="password..."/>
+        <br><br>
+        <div class="login-btn">
+        <input type="submit" name='log' id='log' value="login">
+    </div>
+    </form>
+
+</div>
+
+{% endblock content%}
