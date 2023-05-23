@@ -1,0 +1,107 @@
+{% include 'nav.html' %}
+{% block content %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+
+  <!-- This element is added by Laravel -->
+  <form method="post">
+    {% csrf_token %}
+    <h1>Edit Profile</h1>
+    <hr>
+
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+
+          <img src="" class="avatar img-circle" alt="avatar">
+          <h6>Upload your photo...</h6>
+            {{ form1.as_p }}
+          <input type="file" name="ProfImage" multiple>
+          <input type="hidden" name="_token" value="">
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-7 personal-info">
+
+        <h3>Personal info</h3>
+
+        <div class='msg' id="msg"></div>
+
+        <!-- Change this to a <form> to reproduce your original issue -->
+        <div class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Pname" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee CNIC:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Pcnic" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee Rank:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Prnk" type="text" value="" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee Position:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Ppos" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee Room No:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Prom" type="text" value="" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee WRK HRs.:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="Pwrkhr" type="text" value="" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Employee WRK Days.:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="PWrkds" type="text" value="" >
+            </div>
+          </div>
+
+          
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Type:</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="PType" type="text" value="" >
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <a href="/statics"> <input type="button" href="/statics" class="btn btn-default" value="Cancel"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<hr>
+</form>
+</div>
+{% endblock content%}
